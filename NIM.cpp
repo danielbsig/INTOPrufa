@@ -8,6 +8,7 @@ using namespace std;
 //Şetta fall á ağ birta stöğu allra eldspıtnahrúgna (hrúgur í fleirtölu eignarfalli)
 void birta( int* hruga );
 
+
 //Şetta fall á ağ reikna út hversu margar eldspıtur eru eftir í hrúgunum:
 int samtals( int* hruga );
 
