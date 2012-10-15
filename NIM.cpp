@@ -75,7 +75,7 @@ void spila( )
 	cout << "                   NU SPILUM VID NIM!!" << endl;
 	cout << "*-------------------------------------------------------*" << endl;
 	cout << endl << endl;
-	cout << "Slafur inn fjolda hruga (0 til ad fa slembitolu): ";
+	cout << "Sladu inn fjolda hruga (0 til ad fa slembitolu): ";
 
 	srand( time( 0 ) );
 
