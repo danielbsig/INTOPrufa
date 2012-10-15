@@ -70,7 +70,6 @@ int main( )
 
 void spila( )
 {
-	int hruga[ 10 ];
 	cout << "*-------------------------------------------------------*" << endl;
 	cout << "                   NU SPILUM VID NIM!!" << endl;
 	cout << "*-------------------------------------------------------*" << endl;
@@ -83,6 +82,7 @@ void spila( )
 	hrugufjoldi = hrugufjoldi <= 0 ? ( (rand( ) % 8 ) + 2 ) : hrugufjoldi;
 	cout << "Vid spilum med " << hrugufjoldi << " hrugur. " << endl;
 
+	int* hruga = new int[ hrugufjoldi ];
 	for ( int i = 0; i < hrugufjoldi; i++ )
 	{
 		hruga[ i ]=( ( rand( ) % 14 ) + 1 );
