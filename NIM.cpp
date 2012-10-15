@@ -1,14 +1,12 @@
 //NIM dabs október 1997
 #include <iostream>
-#include <conio.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 using namespace std;
 
-
 //Þetta fall á að birta stöðu allra eldspýtnahrúgna (hrúgur í fleirtölu eignarfalli)
 void birta( int* hruga );
-
 
 //Þetta fall á að reikna út hversu margar eldspýtur eru eftir í hrúgunum:
 int samtals( int* hruga );
@@ -105,7 +103,7 @@ void hjalp( )
 	cout << "einni hrugu i einu.  Sa sem tekur sidustu eldspytuna " << endl;
 	cout << "ur sidustu hrugunni vinnur.  Gangi ykkur vel! " << endl << endl;
 	cout << "Sladu a einhvern lykil... " << endl;
-	getch( );
+	getchar( );
 }
 
 void birta( int* hruga )
@@ -174,7 +172,7 @@ void notandi( int* hruga )
 	{
 		cout << endl << "Thu vannst.  Til hamingju!" << endl << endl;
 		cout << "Sladu a einhvern lykil... " << endl;
-		getch( );
+		getchar( );
 	}
 	cout << endl;
 }
@@ -215,7 +213,7 @@ void tolva( int* hruga )
 	{
 		cout << endl << "Eg vann.  Thad gengur bara betur naest!" << endl << endl;
 		cout << "Sladu a einhvern lykil...   " << endl;
-		getch( );
+		getchar( );
 	}
 	cout << endl;
 }
