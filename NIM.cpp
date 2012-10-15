@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 using namespace std;
 
@@ -64,10 +65,9 @@ void spila( )
 	cout << endl << endl;
 	cout << "Veljum med hve margar hrugur vid spilum. " << endl;
 	cout << "Yttu a einhvern lykil: " << endl;
-	while( !kbhit( ) )
-	{
-		rand( );
-	}
+
+	srand( time( 0 ) );	
+
 	hrugufjoldi = ( (rand( ) % 8 ) + 2 );
 	cout << "Vid spilum med " << hrugufjoldi << " hrugur. " << endl;
 
