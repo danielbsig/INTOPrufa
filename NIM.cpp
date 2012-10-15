@@ -34,7 +34,17 @@ int main( )
 	int val;
 	do
 	{
-		cout << endl << endl << endl;
+		cout << endl << endl;
+		cout << "        __  __  ______               " << endl;
+		cout << "       /\\ \\/\\ \\/\\__  _\\   /'\\_/`\\    " << endl;
+		cout << "       \\ \\ `\\\\ \\/_/\\ \\/  /\\      \\   " << endl;
+		cout << "        \\ \\ , ` \\ \\ \\ \\  \\ \\ \\__\\ \\  " << endl;
+		cout << "         \\ \\ \\`\\ \\ \\_\\ \\__\\ \\ \\_/\\ \\ " << endl;
+		cout << "          \\ \\_\\ \\_\\/\\_____\\\\ \\_\\\\ \\_\\" << endl;
+		cout << "           \\/_/\\/_/\\/_____/ \\/_/ \\/_/" << endl;
+		cout << "                                     " << endl;
+		cout << "                - you just got pwnd  " << endl;
+		cout << "                                     " << endl << endl;
 		cout << "                ADALVALMYND " << endl << endl;
 		cout << "                      1. Spila NIM" << endl;
 		cout << "                      2. Birta reglurnar i NIM" << endl;
