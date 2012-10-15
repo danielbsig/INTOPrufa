@@ -29,7 +29,7 @@ void spila( );
 int hrugufjoldi;
 
 //Hér byrjar aðalforritið:
-void main( )
+int main( )
 {
 	int val;
 	do
@@ -54,6 +54,8 @@ void main( )
 		}
 	}
 	while ( val != 3 );
+
+	return 0;
 }
 
 void spila( )
