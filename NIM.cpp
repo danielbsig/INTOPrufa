@@ -196,19 +196,40 @@ void tolva( int* hruga )
 		return;
 	}
 
-	int eldspytur;
+	int eldspytur = 0;
 	int hrugunumer;
 
-	do
+	int nimsum = 0;
+	for (int i = 0; i < hrugufjoldi; i++)
 	{
-		eldspytur = ( ( rand( ) % 14 ) + 1 );
-		hrugunumer = ( ( rand( ) % hrugufjoldi ) + 1 );
-		if( eldspytur > hruga[(hrugunumer)-1] )
+		nimsum ^= hruga[ i ];
+	}
+
+	if (nimsum != 0)
+	{
+		for (int i = 0; i < hrugufjoldi; i++)
 		{
-			continue;
+			if ((nimsum ^ hruga[ i ]) < hruga[ i ])
+			{
+				hrugunumer = i;
+				eldspytur = hruga[ i ] - (nimsum ^ hruga[ i ]);
+				break;
+			}
 		}
 	}
-	while ( eldspytur > hruga[ (hrugunumer) - 1 ] );
+
+	if (eldspytur == 0)
+	{
+		for (int i = 0; i < hrugufjoldi; i++)
+		{
+			if (hruga[ i ] > 0)
+			{
+				hrugunumer = i;
+				eldspytur = hruga[ i ];
+				break;
+			}
+		}
+	}
 
 	if ( eldspytur > 1 )
 	{
@@ -218,9 +239,9 @@ void tolva( int* hruga )
 	{
 		cout << "      Eg tek " << eldspytur << " eldspytu ur hrugu nr. ";
 	}
-	cout << hrugunumer << "." << endl;
+	cout << (hrugunumer + 1) << "." << endl;
 
-	hruga[ (hrugunumer) - 1 ] -= eldspytur;
+	hruga[ hrugunumer ] -= eldspytur;
 	if( !samtals( hruga ) )
 	{
 		cout << endl << "Eg vann.  Thad gengur bara betur naest!" << endl << endl;
