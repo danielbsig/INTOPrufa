@@ -65,12 +65,12 @@ void spila( )
 	cout << "                   NU SPILUM VID NIM!!" << endl;
 	cout << "*-------------------------------------------------------*" << endl;
 	cout << endl << endl;
-	cout << "Veljum med hve margar hrugur vid spilum. " << endl;
-	cout << "Yttu a einhvern lykil: " << endl;
+	cout << "Slafur inn fjolda hruga (0 til ad fa slembitolu): ";
 
-	srand( time( 0 ) );	
+	srand( time( 0 ) );
 
-	hrugufjoldi = ( (rand( ) % 8 ) + 2 );
+	cin >> hrugufjoldi;
+	hrugufjoldi = hrugufjoldi <= 0 ? ( (rand( ) % 8 ) + 2 ) : hrugufjoldi;
 	cout << "Vid spilum med " << hrugufjoldi << " hrugur. " << endl;
 
 	for ( int i = 0; i < hrugufjoldi; i++ )
