@@ -99,6 +99,8 @@ void spila( )
 		birta( hruga );
 	}
 	while ( samtals( hruga ) );
+
+	delete[] hruga;
 }
 
 void hjalp( )
