@@ -1,4 +1,4 @@
-//NIM dabs október 1997
+//NIM dabs október 1997 <-- holy shit
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
