@@ -1,4 +1,4 @@
-//NIM dabs október 1997
+//NIM dabs október 1997 <-- holy shit
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -34,7 +34,17 @@ int main( )
 	int val;
 	do
 	{
-		cout << endl << endl << endl;
+		cout << endl << endl;
+		cout << "        __  __  ______               " << endl;
+		cout << "       /\\ \\/\\ \\/\\__  _\\   /'\\_/`\\    " << endl;
+		cout << "       \\ \\ `\\\\ \\/_/\\ \\/  /\\      \\   " << endl;
+		cout << "        \\ \\ , ` \\ \\ \\ \\  \\ \\ \\__\\ \\  " << endl;
+		cout << "         \\ \\ \\`\\ \\ \\_\\ \\__\\ \\ \\_/\\ \\ " << endl;
+		cout << "          \\ \\_\\ \\_\\/\\_____\\\\ \\_\\\\ \\_\\" << endl;
+		cout << "           \\/_/\\/_/\\/_____/ \\/_/ \\/_/" << endl;
+		cout << "                                     " << endl;
+		cout << "                - you just got pwnd  " << endl;
+		cout << "                                     " << endl << endl;
 		cout << "                ADALVALMYND " << endl << endl;
 		cout << "                      1. Spila NIM" << endl;
 		cout << "                      2. Birta reglurnar i NIM" << endl;
@@ -60,19 +70,19 @@ int main( )
 
 void spila( )
 {
-	int hruga[ 10 ];
 	cout << "*-------------------------------------------------------*" << endl;
 	cout << "                   NU SPILUM VID NIM!!" << endl;
 	cout << "*-------------------------------------------------------*" << endl;
 	cout << endl << endl;
-	cout << "Veljum med hve margar hrugur vid spilum. " << endl;
-	cout << "Yttu a einhvern lykil: " << endl;
+	cout << "Sladu inn fjolda hruga (0 til ad fa slembitolu): ";
 
-	srand( time( 0 ) );	
+	srand( time( 0 ) );
 
-	hrugufjoldi = ( (rand( ) % 8 ) + 2 );
+	cin >> hrugufjoldi;
+	hrugufjoldi = hrugufjoldi <= 0 ? ( (rand( ) % 8 ) + 2 ) : hrugufjoldi;
 	cout << "Vid spilum med " << hrugufjoldi << " hrugur. " << endl;
 
+	int* hruga = new int[ hrugufjoldi ];
 	for ( int i = 0; i < hrugufjoldi; i++ )
 	{
 		hruga[ i ]=( ( rand( ) % 14 ) + 1 );
@@ -89,6 +99,8 @@ void spila( )
 		birta( hruga );
 	}
 	while ( samtals( hruga ) );
+
+	delete[] hruga;
 }
 
 void hjalp( )
