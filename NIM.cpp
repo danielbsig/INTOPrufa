@@ -1,4 +1,4 @@
-//NIM dabs október 1997
+//NIM dabs október 1997 <-- holy shit
 #include <iostream>
 #include <stdlib.h>
 #include <stdio.h>
@@ -34,7 +34,17 @@ int main( )
 	int val;
 	do
 	{
-		cout << endl << endl << endl;
+		cout << endl << endl;
+		cout << "        __  __  ______               " << endl;
+		cout << "       /\\ \\/\\ \\/\\__  _\\   /'\\_/`\\    " << endl;
+		cout << "       \\ \\ `\\\\ \\/_/\\ \\/  /\\      \\   " << endl;
+		cout << "        \\ \\ , ` \\ \\ \\ \\  \\ \\ \\__\\ \\  " << endl;
+		cout << "         \\ \\ \\`\\ \\ \\_\\ \\__\\ \\ \\_/\\ \\ " << endl;
+		cout << "          \\ \\_\\ \\_\\/\\_____\\\\ \\_\\\\ \\_\\" << endl;
+		cout << "           \\/_/\\/_/\\/_____/ \\/_/ \\/_/" << endl;
+		cout << "                                     " << endl;
+		cout << "                - you just got pwnd  " << endl;
+		cout << "                                     " << endl << endl;
 		cout << "                ADALVALMYND " << endl << endl;
 		cout << "                      1. Spila NIM" << endl;
 		cout << "                      2. Birta reglurnar i NIM" << endl;
@@ -60,19 +70,19 @@ int main( )
 
 void spila( )
 {
-	int hruga[ 10 ];
 	cout << "*-------------------------------------------------------*" << endl;
 	cout << "                   NU SPILUM VID NIM!!" << endl;
 	cout << "*-------------------------------------------------------*" << endl;
 	cout << endl << endl;
-	cout << "Veljum med hve margar hrugur vid spilum. " << endl;
-	cout << "Yttu a einhvern lykil: " << endl;
+	cout << "Sladu inn fjolda hruga (0 til ad fa slembitolu): ";
 
-	srand( time( 0 ) );	
+	srand( time( 0 ) );
 
-	hrugufjoldi = ( (rand( ) % 8 ) + 2 );
+	cin >> hrugufjoldi;
+	hrugufjoldi = hrugufjoldi <= 0 ? ( (rand( ) % 8 ) + 2 ) : hrugufjoldi;
 	cout << "Vid spilum med " << hrugufjoldi << " hrugur. " << endl;
 
+	int* hruga = new int[ hrugufjoldi ];
 	for ( int i = 0; i < hrugufjoldi; i++ )
 	{
 		hruga[ i ]=( ( rand( ) % 14 ) + 1 );
@@ -186,19 +196,40 @@ void tolva( int* hruga )
 		return;
 	}
 
-	int eldspytur;
+	int eldspytur = 0;
 	int hrugunumer;
 
-	do
+	int nimsum = 0;
+	for (int i = 0; i < hrugufjoldi; i++)
 	{
-		eldspytur = ( ( rand( ) % 14 ) + 1 );
-		hrugunumer = ( ( rand( ) % hrugufjoldi ) + 1 );
-		if( eldspytur > hruga[(hrugunumer)-1] )
+		nimsum ^= hruga[ i ];
+	}
+
+	if (nimsum != 0)
+	{
+		for (int i = 0; i < hrugufjoldi; i++)
 		{
-			continue;
+			if ((nimsum ^ hruga[ i ]) < hruga[ i ])
+			{
+				hrugunumer = i;
+				eldspytur = hruga[ i ] - (nimsum ^ hruga[ i ]);
+				break;
+			}
 		}
 	}
-	while ( eldspytur > hruga[ (hrugunumer) - 1 ] );
+
+	if (eldspytur == 0)
+	{
+		for (int i = 0; i < hrugufjoldi; i++)
+		{
+			if (hruga[ i ] > 0)
+			{
+				hrugunumer = i;
+				eldspytur = hruga[ i ];
+				break;
+			}
+		}
+	}
 
 	if ( eldspytur > 1 )
 	{
@@ -208,9 +239,9 @@ void tolva( int* hruga )
 	{
 		cout << "      Eg tek " << eldspytur << " eldspytu ur hrugu nr. ";
 	}
-	cout << hrugunumer << "." << endl;
+	cout << (hrugunumer + 1) << "." << endl;
 
-	hruga[ (hrugunumer) - 1 ] -= eldspytur;
+	hruga[ hrugunumer ] -= eldspytur;
 	if( !samtals( hruga ) )
 	{
 		cout << endl << "Eg vann.  Thad gengur bara betur naest!" << endl << endl;
